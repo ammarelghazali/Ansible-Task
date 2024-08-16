@@ -1,0 +1,4 @@
+ammar@ammar-G3-3590:~/.ssh$ ssh-copy-id -i controller-key.pub devops@172.17.0.2
+
+
+

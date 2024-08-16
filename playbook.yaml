@@ -1,0 +1,15 @@
+- name: play1
+  hosts: all
+  tasks:
+    - name : who am i
+      command : whoami
+    - name : ping
+      ping :
+
+- name: play2
+  hosts: all
+  tasks:
+    - name : install curl
+      apt:
+       name : curl
+       state : present 
