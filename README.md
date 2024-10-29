@@ -9,3 +9,14 @@ choose path to create new dir for new keys --> /home/ammar/.ssh/CHOOSENAME
 Docker inspect containername   -> to get IP
 ssh-copy-id -i AnsibleKey.pub devops@172.17.0.2
 ```
+
+-Ping all servers in inventory
+```
+ansible all -i inventory --private-key AnsibleKey -u devops -m ping
+
+```
+
+-run playbook
+```
+ansible-playbook playbook.yaml 
+```
