@@ -20,3 +20,35 @@ ansible all -i inventory --private-key AnsibleKey -u devops -m ping
 ```
 ansible-playbook playbook.yaml 
 ```
+
+-Run playbook with tag name
+```
+ansible-playbook playbook.yaml --tags third
+```
+
+-Run playbook and skip tag name
+```
+ansible-playbook playbook.yaml --skip-tags third
+```
+
+-Always and Never
+```
+[thirdtag,never] || [thirdtag,always]
+```
+
+
+-Loop
+```
+- name: play1
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: install many servies
+     apt:
+       name: "{{ item }}"
+       state: latest
+     loop:
+       - curl
+       - nginx
+       - foo
+```

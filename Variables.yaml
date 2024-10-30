@@ -1,21 +1,14 @@
-
-
-
 - name: play1
   hosts: all
   gather_facts: false
+  vars:
+    package_name: nginx
+    package_state: latest
   tasks:
-    - name : who am i
-      command : whoami
-      tags : first
-    - name : ping
-      ping :
-      tags : second
     - name : install nginx
-      tags : third
       apt:
-        name : nginx
-        state : present
+        name : "{{package_name}}"
+        state : "{{package_state}}"
       
      
 
